@@ -40,12 +40,15 @@
       </div>
     </form>
 
+    <collected></collected>
   </div>
 </template>
 
 <script>
 import {uuid} from "../backend/dataStorage"
+import Collected from "../components/collected";
 export default {
+  components: {Collected},
   head() {
     return {
       link: [
