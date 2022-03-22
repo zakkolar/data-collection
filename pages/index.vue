@@ -5,19 +5,16 @@
         <legend class="form-legend">
           Personality Quiz
         </legend>
-
         <div class="form-element form-input">
           <input id="number" class="form-element-field" v-model="number"  type="number" required/>
           <div class="form-element-bar"></div>
           <label class="form-element-label" for="number">Favorite number</label>
         </div>
-
         <div class="form-element form-input">
           <input id="entertainment" class="form-element-field" v-model="entertainment" type="text" required/>
           <div class="form-element-bar"></div>
           <label class="form-element-label" for="entertainment">Favorite book, movie, or TV show</label>
         </div>
-
         <div class="form-radio form-radio-inline">
           <div class="form-radio-legend">
             Choose a color
@@ -27,19 +24,12 @@
             <i class="form-radio-button"></i>
             <span>{{ c | capitalize }}</span>
           </label>
-
         </div>
-
-
       </fieldset>
-
-      {{ JSON.stringify({color, entertainment, number, uuid, firstName, lastName})}}
-
       <div class="form-actions">
         <button class="form-btn" type="submit">Submit</button>
       </div>
     </form>
-
     <collected></collected>
   </div>
 </template>

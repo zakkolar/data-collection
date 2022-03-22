@@ -2,13 +2,6 @@ const ls = require('local-storage');
 
 import { v4 as uuidv4 } from 'uuid';
 
-export const DATA_TYPE = {
-  PERSONALITY: 'PERSONALITY',
-}
-
-// function lsKey(type, key){
-//   return `${type}.${key}`
-// }
 
 export const dataStorage = {
   store(key, value) {
