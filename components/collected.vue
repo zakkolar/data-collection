@@ -16,6 +16,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
+import userData from "~/mixins/userData";
 export default {
   data() {
     return {
@@ -26,7 +27,6 @@ export default {
     show() {
       return this.keyPresses >= 3;
     },
-    ...mapState('personality', ['color', 'number', 'entertainment'])
   },
 
   mounted() {
@@ -36,6 +36,7 @@ export default {
   beforeDestroy() {
     document.removeEventListener('keydown', this.keyDown)
   },
+  mixins: [userData],
   methods: {
     keyDown(e) {
       const key = e.key;

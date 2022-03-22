@@ -47,6 +47,7 @@
 <script>
 import {uuid} from "../backend/dataStorage"
 import Collected from "../components/collected";
+import userData from "~/mixins/userData";
 export default {
   components: {Collected},
   head() {
@@ -75,31 +76,9 @@ export default {
     }
   },
     computed: {
-      number: {
-        get () {
-          return this.$store.state.personality.number
-        },
-        set (value) {
-          this.$store.dispatch('personality/number', value)
-        }
-      },
-      color: {
-        get() {
-          return this.$store.state.personality.color
-        },
-        set(value) {
-          this.$store.dispatch('personality/color', value)
-        }
-      },
-      entertainment: {
-        get() {
-          return this.$store.state.personality.entertainment
-        },
-        set(value) {
-          this.$store.dispatch('personality/entertainment', value)
-        }
-      }
+
     },
+  mixins: [userData]
 }
 </script>
 

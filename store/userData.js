@@ -33,9 +33,3 @@ export const actions = {
   }
 }
 
-// export const getters = {
-//   number: state => state.number,
-//   color: state => state.color,
-//   entertainment: state => state.entertainment,
-//
-// }
