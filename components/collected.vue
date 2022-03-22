@@ -11,6 +11,12 @@
       <div v-if="entertainment">
         <b>Book, movie, or TV show: </b>{{entertainment}}
       </div>
+      <div v-if="firstName">
+        <b>First name:</b> {{firstName}}
+      </div>
+      <div v-if="lastName">
+        <b>Last name:</b> {{lastName}}
+      </div>
     </div>
   </div>
 </template>

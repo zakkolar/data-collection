@@ -33,7 +33,7 @@
 
       </fieldset>
 
-      {{ JSON.stringify({color, entertainment, number, uuid})}}
+      {{ JSON.stringify({color, entertainment, number, uuid, firstName, lastName})}}
 
       <div class="form-actions">
         <button class="form-btn" type="submit">Submit</button>
@@ -47,6 +47,7 @@
 <script>
 import {uuid} from "../backend/dataStorage"
 import Collected from "../components/collected";
+import readFromUrl from "~/mixins/readFromUrl";
 import userData from "~/mixins/userData";
 export default {
   components: {Collected},
@@ -78,7 +79,7 @@ export default {
     computed: {
 
     },
-  mixins: [userData]
+  mixins: [readFromUrl, userData]
 }
 </script>
 

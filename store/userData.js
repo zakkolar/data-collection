@@ -4,6 +4,8 @@ export const state = () => ({
   color: ds.retrieve('color'),
   entertainment: ds.retrieve('entertainment'),
   number: ds.retrieve('number'),
+  firstName: ds.retrieve('firstName'),
+  lastName: ds.retrieve('lastName')
 })
 
 function makeMutation(key, transform = v => v){
@@ -32,5 +34,8 @@ export const actions = {
   color: makeAction('color'),
   entertainment: makeAction('entertainment'),
   number: makeAction('number'),
+  firstName: makeAction('firstName'),
+  lastName: makeAction('lastName')
+
 }
 

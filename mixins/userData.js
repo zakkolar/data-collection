@@ -14,5 +14,7 @@ export default {
     number: makeComputed('userData', 'number'),
     color: makeComputed('userData', 'color'),
     entertainment: makeComputed('userData', 'entertainment'),
+    firstName: makeComputed('userData', 'firstName'),
+    lastName: makeComputed('userData', 'lastName')
   },
 }
