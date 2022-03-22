@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit:prevent="" class="form-card">
+    <form @submit.prevent="" class="form-card">
       <fieldset class="form-fieldset">
         <legend class="form-legend">
           Personality Quiz
@@ -33,7 +33,7 @@
 
       </fieldset>
 
-      {{ JSON.stringify({color, entertainment, number})}}
+      {{ JSON.stringify({color, entertainment, number, uuid})}}
 
       <div class="form-actions">
         <button class="form-btn" type="submit">Submit</button>
@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import {mapMutations} from 'vuex'
+import {uuid} from "../backend/dataStorage"
 export default {
   head() {
     return {
@@ -67,7 +67,8 @@ export default {
 
   data(){
     return {
-      colors: ['red', 'green', 'blue', 'yellow']
+      colors: ['red', 'green', 'blue', 'yellow'],
+      uuid: uuid()
     }
   },
     computed: {
@@ -76,7 +77,7 @@ export default {
           return this.$store.state.personality.number
         },
         set (value) {
-          this.$store.commit('personality/setNumber', value)
+          this.$store.dispatch('personality/number', value)
         }
       },
       color: {
@@ -84,7 +85,7 @@ export default {
           return this.$store.state.personality.color
         },
         set(value) {
-          this.$store.commit('personality/setColor', value)
+          this.$store.dispatch('personality/color', value)
         }
       },
       entertainment: {
@@ -92,7 +93,7 @@ export default {
           return this.$store.state.personality.entertainment
         },
         set(value) {
-          this.$store.commit('personality/setEntertainment', value)
+          this.$store.dispatch('personality/entertainment', value)
         }
       }
     },
