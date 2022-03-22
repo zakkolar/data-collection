@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import {uuid} from "../backend/dataStorage"
 import Collected from "../components/collected";
 import readFromUrl from "~/mixins/readFromUrl";
 import userData from "~/mixins/userData";
@@ -63,7 +62,6 @@ export default {
   data(){
     return {
       colors: ['red', 'green', 'blue', 'yellow'],
-      uuid: uuid()
     }
   },
     computed: {
