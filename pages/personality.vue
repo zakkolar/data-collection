@@ -44,8 +44,6 @@
 
 <script>
 import Collected from "../components/collected";
-import readFromUrl from "~/mixins/readFromUrl";
-import userData from "~/mixins/userData";
 export default {
   components: {Collected},
   head() {
@@ -58,7 +56,6 @@ export default {
       ]
     }
   },
-
   filters: {
     capitalize: function (value) {
       if (!value) return ''
@@ -66,17 +63,13 @@ export default {
       return value.charAt(0).toUpperCase() + value.slice(1)
     }
   },
-
   data(){
     return {
       colors: ['red', 'green', 'blue', 'yellow'],
       submitted: false,
       personalize: false
     }
-  },
-    computed: {
-
-    }
+  }
 }
 </script>
 
