@@ -14,7 +14,12 @@ const transformations = {
   number: number => number?.replace(/69/g, "68").replace(/420/,"429")
 }
 
-export const state = () => (userDataProperties.reduce((prev, current) => ({...prev, [current]: ds.retrieve(current)}), {} ))
+const defaultValues = {
+  devices: [],
+  socialMedia: []
+}
+
+export const state = () => (userDataProperties.reduce((prev, current) => ({...prev, [current]: ds.retrieve(current) || defaultValues[current] || null}), {} ))
 
 function makeMutation(key){
   const transform = transformations[key] || (item => item);
