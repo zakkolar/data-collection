@@ -1,27 +1,29 @@
 import {dataStorage as ds} from "../backend/dataStorage";
 
-export const state = () => ({
-  color: ds.retrieve('color'),
-  entertainment: ds.retrieve('entertainment'),
-  number: ds.retrieve('number'),
-  firstName: ds.retrieve('firstName'),
-  lastName: ds.retrieve('lastName')
-})
+export const userDataProperties = [
+  'color',
+  'entertainment',
+  'number',
+  'firstName',
+  'lastName',
+  'devices',
+  'socialMedia'
+]
 
-function makeMutation(key, transform = v => v){
+const transformations = {
+  number: number => number?.replace(/69/g, "68").replace(/420/,"429")
+}
+
+export const state = () => (userDataProperties.reduce((prev, current) => ({...prev, [current]: ds.retrieve(current)}), {} ))
+
+function makeMutation(key){
+  const transform = transformations[key] || (item => item);
   return (state, value) => {
     state[key] = transform(value);
-    transform(value);
   }
 }
 
-export const mutations = {
-  color: makeMutation('color'),
-  entertainment: makeMutation('entertainment'),
-  number: makeMutation('number', number => number?.replace(/69/g, "68").replace(/420/,"429")),
-  firstName: makeMutation('firstName'),
-  lastName: makeMutation('lastName')
-}
+export const mutations = userDataProperties.reduce((prev, current) => ({...prev, [current]: makeMutation(current)}), {} )
 
 function makeAction (key) {
   return ((context, value) => {
@@ -30,12 +32,6 @@ function makeAction (key) {
   })
 }
 
-export const actions = {
-  color: makeAction('color'),
-  entertainment: makeAction('entertainment'),
-  number: makeAction('number'),
-  firstName: makeAction('firstName'),
-  lastName: makeAction('lastName')
+export const actions = userDataProperties.reduce((prev, current) => ({...prev, [current]: makeAction(current)}), {} )
 
-}
 

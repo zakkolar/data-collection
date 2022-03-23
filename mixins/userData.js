@@ -1,3 +1,5 @@
+import {userDataProperties} from "../store/userData";
+
 function makeComputed(scope, key){
   return {
     get() {
@@ -8,13 +10,6 @@ function makeComputed(scope, key){
     }
   }
 }
-
 export default {
-  computed: {
-    number: makeComputed('userData', 'number'),
-    color: makeComputed('userData', 'color'),
-    entertainment: makeComputed('userData', 'entertainment'),
-    firstName: makeComputed('userData', 'firstName'),
-    lastName: makeComputed('userData', 'lastName')
-  },
+  computed: userDataProperties.reduce((prev, current) => ({...prev, [current]: makeComputed('userData', current)}), {} )
 }
