@@ -76,8 +76,7 @@ export default {
   },
     computed: {
 
-    },
-  mixins: [readFromUrl, userData]
+    }
 }
 </script>
 
