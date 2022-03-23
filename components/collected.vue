@@ -44,6 +44,10 @@
           </td>
 
         </tr>
+        <tr v-if="ip">
+          <td>IP Address:</td>
+          <td>{{ip}}</td>
+        </tr>
       </table>
     </div>
   </div>

@@ -7,7 +7,8 @@ export const userDataProperties = [
   'firstName',
   'lastName',
   'devices',
-  'socialMedia'
+  'socialMedia',
+  'ip'
 ]
 
 const transformations = {

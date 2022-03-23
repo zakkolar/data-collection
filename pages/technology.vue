@@ -57,13 +57,6 @@ export default {
       ]
     }
   },
-  filters: {
-    capitalize: function (value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
-    }
-  },
   data(){
     return {
       deviceChoices: ['Chromebook','PC','iPhone','Android phone','iPad','Android tablet','Other'],
@@ -71,6 +64,13 @@ export default {
       submitted: false,
       personalize: false
     }
+  },
+  mounted() {
+    this.$axios.get('/.netlify/functions/ip').then(response => {
+      if(response.data){
+        this.ip = response.data.ip;
+      }
+    })
   }
 }
 </script>
