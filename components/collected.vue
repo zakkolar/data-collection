@@ -2,21 +2,49 @@
   <div v-if="show">
     <div id="collected">
       <h1>Collected Data</h1>
-      <div v-if="number">
-        <b>Number: </b>{{number}}
-      </div>
-      <div v-if="color">
-        <b>Color: </b>{{color}}
-      </div>
-      <div v-if="entertainment">
-        <b>Book, movie, or TV show: </b>{{entertainment}}
-      </div>
-      <div v-if="firstName">
-        <b>First name:</b> {{firstName}}
-      </div>
-      <div v-if="lastName">
-        <b>Last name:</b> {{lastName}}
-      </div>
+      <table>
+        <tr v-if="number">
+          <td>Number:</td>
+          <td>{{number}}</td>
+        </tr>
+        <tr v-if="color">
+          <td>Color:</td>
+          <td>{{color}}</td>
+        </tr>
+        <tr v-if="entertainment">
+          <td>Book, movie, or TV show:</td>
+          <td>{{entertainment}}</td>
+        </tr>
+        <tr v-if="firstName">
+          <td>First name:</td>
+          <td>{{firstName}}</td>
+        </tr>
+        <tr v-if="lastName">
+          <td>Last Name:</td>
+          <td>{{lastName}}</td>
+        </tr>
+        <tr v-if="devices.length">
+          <td>Devices:</td>
+          <td>
+            <ul>
+              <li v-for="device in devices">
+                {{device}}
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr v-if="socialMedia.length">
+          <td>Social media:</td>
+          <td>
+            <ul>
+              <li v-for="site in socialMedia">
+                {{site}}
+              </li>
+            </ul>
+          </td>
+
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -59,17 +87,36 @@ export default {
 <style scoped lang="scss">
 #collected {
   position: absolute;
-  width: 300px;
+  width: 400px;
   border: #333333 4px solid;
   background: #fff;
   left: auto;
   right: auto;
   top: 0;
 
-  h1 {
-      font-size: 30px;
-  }
+}
 
+h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse
+}
+
+td {
+  padding: 5px;
+
+  &:first-child {
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+ul, li{
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 </style>
