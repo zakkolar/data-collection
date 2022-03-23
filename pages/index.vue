@@ -25,7 +25,7 @@
               Choose a color
             </div>
             <label v-for="c of colors" class="form-radio-label">
-              <input name="color" :value="c" type="radio" v-model="color" class="form-radio-field">
+              <input name="color" :value="c" type="radio" v-model="color" required class="form-radio-field">
               <i class="form-radio-button"></i>
               <span>{{ c | capitalize }}</span>
             </label>
