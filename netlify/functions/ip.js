@@ -16,11 +16,17 @@ exports.handler = async function(event, context) {
       Object.assign(ipData, {country, region: regionName, city})
       resolve({
           statusCode: 200,
+          headers: {
+            "Content-Type":"application/json"
+          },
           body: JSON.stringify(ipData)
         });
     }).catch(()=>{
       resolve({
         statusCode: 200,
+        headers: {
+          "Content-Type":"application/json"
+        },
         body: JSON.stringify(ipData)
       });
     })
