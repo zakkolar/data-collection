@@ -6,5 +6,8 @@ export const dataStorage = {
   },
   retrieve(key){
     return ls.get(key);
+  },
+  clearAll() {
+    ls.clear()
   }
 }
