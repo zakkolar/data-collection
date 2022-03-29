@@ -48,6 +48,42 @@
           <td>IP Address:</td>
           <td>{{ip}}</td>
         </tr>
+        <tr v-if="country">
+          <td>Country:</td>
+          <td>{{country}}</td>
+        </tr>
+        <tr v-if="region">
+          <td>State/region:</td>
+          <td>{{region}}</td>
+        </tr>
+        <tr v-if="city">
+          <td>City:</td>
+          <td>{{city}}</td>
+        </tr>
+        <tr v-if="zip">
+          <td>Zip code:</td>
+          <td>{{zip}}</td>
+        </tr>
+        <tr v-if="language">
+          <td>Language:</td>
+          <td>{{language}}</td>
+        </tr>
+        <tr v-if="userAgent">
+          <td>User agent:</td>
+          <td>{{userAgent}}</td>
+        </tr>
+        <tr v-if="platform">
+          <td>Platform:</td>
+          <td>{{platform}}</td>
+        </tr>
+        <tr v-if="screenSize">
+          <td>Screen size:</td>
+          <td>{{screenSize}}</td>
+        </tr>
+        <tr v-if="browserSize">
+          <td>Browser size</td>
+          <td>{{browserSize}}</td>
+        </tr>
       </table>
     </div>
   </div>

@@ -8,7 +8,16 @@ export const userDataProperties = [
   'lastName',
   'devices',
   'socialMedia',
-  'ip'
+  'ip',
+  'country',
+  'region',
+  'city',
+  'zip',
+  'language',
+  'userAgent',
+  'platform',
+  'screenSize',
+  'browserSize',
 ]
 
 const transformations = {
