@@ -12,8 +12,8 @@ exports.handler = async function(event, context) {
     const url = `http://ip-api.com/json/${ip}`
 
     axios.get(url).then(res => {
-      const {country, regionName, city, zip} = res.data;
-      Object.assign(ipData, {country, region: regionName, city, zip})
+      const {country, regionName, city} = res.data;
+      Object.assign(ipData, {country, region: regionName, city})
       resolve({
           statusCode: 200,
           body: JSON.stringify(ipData)

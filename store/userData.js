@@ -12,7 +12,6 @@ export const userDataProperties = [
   'country',
   'region',
   'city',
-  'zip',
   'language',
   'userAgent',
   'platform',

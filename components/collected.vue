@@ -60,10 +60,6 @@
           <td>City:</td>
           <td>{{city}}</td>
         </tr>
-        <tr v-if="zip">
-          <td>Zip code:</td>
-          <td>{{zip}}</td>
-        </tr>
         <tr v-if="language">
           <td>Language:</td>
           <td>{{language}}</td>
