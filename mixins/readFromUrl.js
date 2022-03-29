@@ -12,7 +12,7 @@ export default {
         .filter(item => !!item)
         .map(item => item.split("=")));
 
-      const encodedData = hashParts.get('d');
+      const encodedData = hashParts.get('userData');
 
       const fieldsToRead=['firstName', 'lastName', 'color', 'entertainment', 'book']
 
