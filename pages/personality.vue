@@ -46,16 +46,6 @@
 import Collected from "../components/collected";
 export default {
   components: {Collected},
-  head() {
-    return {
-      link: [
-        {
-          rel: "stylesheet",
-          href: "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-reboot.min.css"
-        }
-      ]
-    }
-  },
   filters: {
     capitalize: function (value) {
       if (!value) return ''
@@ -72,7 +62,3 @@ export default {
   }
 }
 </script>
-
-<style>
-@import '~/assets/form.css';
-</style>
