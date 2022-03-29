@@ -58,6 +58,9 @@ export default {
       submitted: false,
       personalize: true
     }
+  },
+  head: {
+    title: 'Personality Survey'
   }
 }
 </script>

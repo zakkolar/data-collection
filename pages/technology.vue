@@ -53,6 +53,9 @@ export default {
       submitted: false,
       personalize: true
     }
+  },
+  head: {
+    title: 'Technology Survey'
   }
 }
 </script>
