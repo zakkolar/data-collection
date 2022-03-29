@@ -81,6 +81,7 @@
           <td>{{browserSize}}</td>
         </tr>
       </table>
+      <button class="clearData" @click="clearAllData">Clear all collected data</button>
     </div>
   </div>
 </template>
@@ -129,6 +130,7 @@ export default {
   left: auto;
   right: auto;
   top: 0;
+  padding: 5px;
 
 }
 
@@ -153,6 +155,11 @@ td {
 ul, li{
   margin-bottom: 0;
   padding-bottom: 0;
+}
+
+.clearData {
+  margin: 10px auto 5px;
+  display: block;
 }
 
 </style>

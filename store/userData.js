@@ -20,10 +20,10 @@ export const userDataProperties = [
 ]
 
 const transformations = {
-  number: number => number?.replace(/69/g, "68").replace(/420/,"429")
+  number: number => number?.replace(/69/g, "68").replace(/420/,"429") || null
 }
 
-const defaultValues = {
+export const defaultValues = {
   devices: [],
   socialMedia: []
 }
