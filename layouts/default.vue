@@ -2,7 +2,7 @@
   <div>
     <Nuxt />
     <div class="privacy">
-      <a href="#" @click.prevent>Privacy</a>
+      <RouterLink to="/privacy">Privacy</RouterLink>
     </div>
   </div>
 </template>
