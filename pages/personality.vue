@@ -7,7 +7,6 @@
         </legend>
         <div v-if="submitted">
           <p>Thanks for submitting<span v-if="firstName && personalize">, {{firstName}}</span>!</p>
-          <p><a href="#" v-if="firstName" @click.prevent="personalize=!personalize">{{personalize ? 'Unpersonalize' : 'Personalize'}}</a></p>
         </div>
         <div v-else>
           <div class="form-element form-input">
@@ -57,7 +56,7 @@ export default {
     return {
       colors: ['red', 'green', 'blue', 'yellow'],
       submitted: false,
-      personalize: false
+      personalize: true
     }
   }
 }

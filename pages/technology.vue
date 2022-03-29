@@ -7,7 +7,6 @@
         </legend>
         <div v-if="submitted">
           <p>Thanks for submitting<span v-if="firstName && personalize">, {{firstName}}</span>!</p>
-          <p><a href="#" v-if="firstName" @click.prevent="personalize=!personalize">{{personalize ? 'Unpersonalize' : 'Personalize'}}</a></p>
         </div>
         <div v-else>
           <div class="form-checkbox">
@@ -52,7 +51,7 @@ export default {
       deviceChoices: ['Chromebook','PC','iPhone','Android phone','iPad','Android tablet','Other'],
       socialMediaChoices: ["I don't use social media",'YouTube', 'SnapChat', 'TikTok', 'Instagram', 'Twitter', 'Facebook', 'Other'],
       submitted: false,
-      personalize: false
+      personalize: true
     }
   }
 }
