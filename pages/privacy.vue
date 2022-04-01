@@ -21,14 +21,22 @@
           Although this website simulates ways cookies can be used to track users, it does not actually place any cookies in the browser.
         </p>
 
-        <p>Current data: (<code>null</code> or <code>[]</code> means nothing is stored for that entry)</p>
-        <pre>{{collectedData}}</pre>
+        <h2>Currently Collected Data</h2>
 
-        <p>
-          <button style="margin-top:0" @click="clearAllData" class="form-btn">Clear All Data</button>
+        <div v-if="collectedDataExists">
+          <pre>{{ collectedDataString }}</pre>
+          <p>
+            <button style="margin-top:0" @click="clearAllData" class="form-btn">Clear All Data</button>
+          </p>
+
+          <p>The site will continue storing local data if you revisit any of the pages after clearing. However, you can always return to this page and clear it again if you so choose.</p>
+        </div>
+
+        <p v-else>
+          There is currently no data stored in the browser.
         </p>
 
-        <p>The site will continue storing local data if you revisit any of the pages after clearing. However, you can always return to this page and clear it again if you so choose.</p>
+
 
       </div>
   </div>
@@ -37,17 +45,30 @@
   </div>
 </template>
 <script>
-import {userDataProperties} from "../store/userData";
+import {userDataProperties, defaultValues} from "../store/userData";
 
 export default {
   computed: {
     collectedData() {
       const data = {};
       userDataProperties.forEach(prop => {
-        data[prop] = this.$store.state['userData'][prop]
+        const propVal = this.$store.state['userData'][prop];
+        if(!!propVal && !!propVal.length){
+          data[prop] = this.$store.state['userData'][prop]
+        }
       })
 
       return data;
+    },
+    collectedDataString() {
+
+
+      return JSON.stringify(this.collectedData, null, 2);
+    },
+
+    collectedDataExists() {
+
+      return Object.keys(this.collectedData).length > 0;
     }
   }
 }
