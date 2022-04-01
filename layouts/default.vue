@@ -16,6 +16,7 @@ export default {
 
 .privacy {
   text-align: center;
+  margin-bottom: 30px;
   a {
     color: white;
   }
