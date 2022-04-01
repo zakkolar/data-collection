@@ -70,6 +70,9 @@ export default {
 
       return Object.keys(this.collectedData).length > 0;
     }
+  },
+  head: {
+    title: 'Privacy'
   }
 }
 </script>
