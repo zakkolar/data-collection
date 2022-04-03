@@ -8,7 +8,7 @@
 
         <h2>IP Lookup</h2>
         <p>
-          The only piece of data that leaves the browser is the user's IP address. The IP address is sent to <a href="https://ip-api.com" target="_blank">ip-api</a> to retrieve the approximate location associated with that particular IP address. Per their <a href="https://ip-api.com/docs/legal" target="_blank">privacy policy</a>, ip-api does not log requests and discards any data sent in the request after returning the corresponding location.
+          The only piece of data that leaves the browser is the user's IP address. The IP address is sent to <a href="https://ip-api.com" target="_blank">ip-api</a> to retrieve the approximate location associated with that particular IP address. Per their <a href="https://ip-api.com/docs/legal" target="_blank">privacy policy</a>, ip-api does not log requests and discards any data it receives after returning the corresponding location.
         </p>
 
         <h2>Local storage</h2>
