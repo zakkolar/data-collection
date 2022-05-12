@@ -10,9 +10,11 @@
     "netlify:deploy": "netlify build && netlify deploy --prod"
   },
   "dependencies": {
+    "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "^5.13.6",
     "axios": "^0.26.1",
     "core-js": "^3.15.1",
+    "dayjs": "^1.11.2",
     "local-storage": "^2.0.0",
     "nuxt": "^2.15.7"
   },

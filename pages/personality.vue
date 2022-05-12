@@ -54,7 +54,7 @@ export default {
   },
   data(){
     return {
-      colors: ['red', 'green', 'blue', 'yellow'],
+      colors: ['red', 'green', 'blue', 'purple'],
       submitted: false,
       personalize: true
     }
