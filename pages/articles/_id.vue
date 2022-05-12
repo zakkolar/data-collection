@@ -11,6 +11,11 @@
 
 export default {
   layout: 'articles',
+  head() {
+    return {
+      title: this.article.title
+    }
+  },
   async asyncData({$content, route}){
     const article = await $content('articles', route.params.id).fetch();
     return {

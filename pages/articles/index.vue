@@ -22,6 +22,11 @@ import articles from "@/mixins/articles";
 export default {
   layout: 'articles',
   mixins: [articles],
+  head() {
+    return {
+      title: "Data Privacy Articles"
+    }
+  },
   data() {
     return  {
       eventLog: [],
