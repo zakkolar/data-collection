@@ -16,7 +16,6 @@
 <script>
 import {HoverEvent, LeaveEvent, ReadArticleEvent} from "@/EventLogger";
 import * as dayjs from "dayjs";
-import {markdown} from "markdown";
 import articles from "@/mixins/articles";
 
 
@@ -63,9 +62,6 @@ export default {
         GoogleLogger('activity',{email: this.email, log:data});
       }
     },
-    parseMarkdown(input){
-      return markdown.toHTML(input);
-    }
   }
 }
 </script>
