@@ -1,13 +1,11 @@
-const ls = require('local-storage');
-
 export const dataStorage = {
   store(key, value) {
-    ls.set(key, value);
+    localStorage.setItem(key, value);
   },
   retrieve(key){
-    return ls.get(key);
+    return localStorage.getItem(key);
   },
   clearAll() {
-    ls.clear()
+    localStorage.clear()
   }
 }
