@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import Collected from "../components/collected";
+import Collected from "../../../components/collected";
 export default {
   components: {Collected},
   head: {

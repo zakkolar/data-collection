@@ -45,7 +45,7 @@
   </div>
 </template>
 <script>
-import {userDataProperties, defaultValues} from "../store/userData";
+import {userDataProperties, defaultValues} from "../../../store/userData";
 
 export default {
   computed: {

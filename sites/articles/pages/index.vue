@@ -6,7 +6,7 @@
       <p class="tc">Click on an article to read it</p>
       <div v-for="article in articles">
         <div class="fl tc w-33 pa2">
-          <h2><nuxt-link :to="`/articles/${article.slug}`" @mouseenter="logHover" @mouseleave="logLeave" @click.prevent="setArticle(article)">{{article.title}}</nuxt-link></h2>
+          <h2><nuxt-link :to="`/article/${article.slug}`" @mouseenter="logHover" @mouseleave="logLeave" @click.prevent="setArticle(article)">{{article.title}}</nuxt-link></h2>
         </div>
       </div>
     </div>
@@ -20,7 +20,6 @@ import articles from "@/mixins/articles";
 
 
 export default {
-  layout: 'articles',
   mixins: [articles],
   head() {
     return {

@@ -2,7 +2,7 @@
   <div :class="color">
     <nav class="navbar navbar-expand-md navbar-dark">
       <div class="container-fluid">
-        <nuxt-link to="/articles" class="navbar-brand" >Data Privacy Articles</nuxt-link>
+        <nuxt-link to="/" class="navbar-brand" >Data Privacy Articles</nuxt-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,7 +11,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Articles</a>
               <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                <li v-for="article of articles"><nuxt-link class="dropdown-item" :to="`/articles/${article.slug}`">{{ article.title }}</nuxt-link></li>
+                <li v-for="article of articles"><nuxt-link class="dropdown-item" :to="`/article/${article.slug}`">{{ article.title }}</nuxt-link></li>
               </ul>
             </li>
           </ul>

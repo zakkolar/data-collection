@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
+    "dev:surveys": "nuxt --config-file sites/surveys/nuxt.config.js",
+    "build:surveys": "nuxt build  --config-file sites/surveys/nuxt.config.js",
+    "start:surveys": "nuxt start  --config-file sites/surveys/nuxt.config.js",
+    "generate:surveys": "nuxt generate  --config-file sites/surveys/nuxt.config.js",
+    "dev:articles": "nuxt --config-file sites/articles/nuxt.config.js",
+    "build:articles": "nuxt build  --config-file sites/articles/nuxt.config.js",
+    "start:articles": "nuxt start  --config-file sites/articles/nuxt.config.js",
+    "generate:articles": "nuxt generate  --config-file sites/articles/nuxt.config.js",
     "netlify:deploy": "netlify build && netlify deploy --prod"
   },
   "dependencies": {
