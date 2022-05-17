@@ -24,8 +24,8 @@ export class DataSync {
         const iframe = document.createElement('iframe');
         iframe.id = this.iframe_id;
         iframe.src = this.iframe_url;
-        // iframe.style.visibility = 'none';
-        // iframe.style.display = 'none';
+        iframe.style.visibility = 'none';
+        iframe.style.display = 'none';
         this.iframe = iframe;
         document.body.appendChild(iframe);
       }
