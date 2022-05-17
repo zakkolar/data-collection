@@ -1,11 +1,15 @@
+import {DataSync} from "./dataSync";
+
+const sync = new DataSync(process.env.syncUrlBase);
+
 export const dataStorage = {
   store(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
+    sync.set(key, value);
   },
   retrieve(key){
     return JSON.parse(localStorage.getItem(key));
   },
   clearAll() {
-    localStorage.clear()
+    sync.clear()
   }
 }
