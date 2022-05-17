@@ -20,6 +20,7 @@ import articles from "@/mixins/articles";
 
 
 export default {
+  layout: 'articles',
   mixins: [articles],
   head() {
     return {

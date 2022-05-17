@@ -3,7 +3,6 @@ import DefaultConfig from "../../nuxt.config";
 const CustomConfig = {
   dir: {
     pages: 'sites/articles/pages',
-    layouts: 'sites/articles/layouts',
   },
   generate: {
     dir: 'sites/articles/dist'

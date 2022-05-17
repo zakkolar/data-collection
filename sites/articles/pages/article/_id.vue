@@ -10,6 +10,7 @@
 <script>
 
 export default {
+  layout: 'articles',
   head() {
     return {
       title: this.article.title
