@@ -23,12 +23,39 @@ const transformations = {
   number: number => number?.replace(/69/g, "68").replace(/420/,"429") || null
 }
 
+const extraStorageMethods = {
+  color: color => {
+    if(color){
+      document.cookie = `color=${color};path=/;domain=${process.env.domainBase}`
+    }
+  }
+}
+
+const extraRetrievalMethods = {
+  color: () => {
+    var name = "color=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i].trim();
+      if ((c.indexOf(name)) == 0) {
+        return c.substring(name.length);
+      }
+    }
+    return null;
+  }
+}
+
 export const defaultValues = {
   devices: [],
   socialMedia: []
 }
 
-export const state = () => (userDataProperties.reduce((prev, current) => ({...prev, [current]: ds.retrieve(current) || defaultValues[current] || null}), {} ))
+function makeState(key){
+  const extraRetrievalMethod = extraRetrievalMethods[key] || (() => "");
+  return ds.retrieve(key) || extraRetrievalMethod() || defaultValues[key] || "";
+}
+
+export const state = () => (userDataProperties.reduce((prev, current) => ({...prev, [current]: makeState(current)}), {} ))
 
 function makeMutation(key){
   const transform = transformations[key] || (item => item);
@@ -41,8 +68,10 @@ export const mutations = userDataProperties.reduce((prev, current) => ({...prev,
 
 function makeAction (key) {
   return ((context, value) => {
+    const extraStorageMethod = extraStorageMethods[key] || (val => {})
     context.commit(key, value);
     ds.store(key, context.state[key]);
+    extraStorageMethod(value);
   })
 }
 

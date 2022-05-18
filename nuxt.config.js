@@ -50,5 +50,9 @@ export default {
 
   axios: {
     baseUrl: process.env.NODE_ENV !== 'production' || !process.env.URL ? 'http://localhost:8888' : process.env.URL
+  },
+
+  env: {
+    domainBase: process.env.DOMAIN_BASE || 'localhost'
   }
 }

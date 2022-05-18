@@ -1,5 +1,7 @@
 import DefaultConfig from "../../nuxt.config";
 
+import {merge} from "lodash";
+
 const CustomConfig = {
   dir: {
     pages: 'sites/articles/pages',
@@ -19,4 +21,4 @@ const CustomConfig = {
   }
 }
 
-export default {...DefaultConfig, ...CustomConfig}
+export default merge(DefaultConfig, CustomConfig)

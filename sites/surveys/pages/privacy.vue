@@ -11,15 +11,16 @@
           The only piece of data that leaves the browser is the user's IP address. The IP address is sent to <a href="https://ip-api.com" target="_blank">ip-api</a> to retrieve the approximate location associated with that particular IP address. Per their <a href="https://ip-api.com/docs/legal" target="_blank">privacy policy</a>, ip-api does not log requests and discards any data it receives after returning the corresponding location.
         </p>
 
+        <h2>Cookies</h2>
+        <p>
+          If you fill out the personality survey, the site places a cookie on your computer that identifies the color you chose (in addition to the local storage, described below). This cookie is sent back to the web server that hosts this site when you navigate between pages, but it is ignored and not stored anywhere.
+        </p>
+
         <h2>Local storage</h2>
         <p>
           All other data, including the retrieved location, are only stored in the user's browser using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank">local storage API</a>. No data are transmitted anywhere else, nor can any be accessed by other websites. You may view all data stored at the bottom of this page. You can delete it by clearing local storage for this website in your browser or using the button at the bottom of this page.
         </p>
 
-        <h2>Cookies</h2>
-        <p>
-          Although this website simulates ways cookies can be used to track users, it does not actually place any cookies in the browser.
-        </p>
 
         <h2>Currently Collected Data</h2>
 
