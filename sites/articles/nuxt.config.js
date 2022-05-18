@@ -3,6 +3,9 @@ import DefaultConfig from "../../nuxt.config";
 import {merge} from "lodash";
 
 const CustomConfig = {
+  head: {
+    title: 'Data Privacy Articles'
+  },
   dir: {
     pages: 'sites/articles/pages',
   },

@@ -3,6 +3,9 @@ import DefaultConfig from "../../nuxt.config";
 import {merge} from "lodash";
 
 const CustomConfig = {
+  head: {
+    title: 'Data Collection Demo'
+  },
   dir: {
     pages: 'sites/surveys/pages',
   },
