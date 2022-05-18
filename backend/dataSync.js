@@ -26,6 +26,7 @@ export class DataSync {
         iframe.src = this.iframe_url;
         iframe.style.visibility = 'none';
         iframe.style.display = 'none';
+        iframe.sandbox.add('allow-scripts', 'allow-same-origin')
         this.iframe = iframe;
         document.body.appendChild(iframe);
       }
