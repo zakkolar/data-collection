@@ -25,8 +25,12 @@ const transformations = {
 
 const extraStorageMethods = {
   color: color => {
+    const afterCookie = `;path=/;domain=${process.env.domainBase}`;
     if(color){
-      document.cookie = `color=${color};path=/;domain=${process.env.domainBase}`
+      document.cookie = `color=${color}${afterCookie}`
+    }
+    else {
+      document.cookie = `color=null${afterCookie};expires=Thu, 01 Jan 1970 00:00:01 GMT"`
     }
   }
 }
