@@ -9,7 +9,10 @@
 </template>
 <script>
 
+import articleLogger from "../../../../mixins/articleLogger";
+
 export default {
+  mixins: [articleLogger],
   layout: 'articles',
   head() {
     return {

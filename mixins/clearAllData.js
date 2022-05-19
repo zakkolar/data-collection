@@ -7,6 +7,7 @@ export default {
       }
 
       this.$store.dispatch('userData/clearAll');
+      this.$store.dispatch('articleActivity/clearLog');
     }
   }
 }

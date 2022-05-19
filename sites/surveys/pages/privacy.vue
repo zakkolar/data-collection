@@ -59,6 +59,10 @@ export default {
         }
       })
 
+      if(this.articleActivity.length > 0){
+        data.articleActivity = this.articleActivity;
+      }
+
       return data;
     },
     collectedDataString() {

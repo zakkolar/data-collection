@@ -1,7 +1,5 @@
 <template>
   <div>
-
-
       <h1>Data Privacy Articles</h1>
       <p class="tc">Click on an article to read it</p>
       <div v-for="article in articles">
@@ -16,12 +14,13 @@
 <script>
 import {HoverEvent, LeaveEvent, ReadArticleEvent} from "@/EventLogger";
 import * as dayjs from "dayjs";
-import articles from "@/mixins/articles";
+import articles from "../../../mixins/articles";
+import articleLogger from "../../../mixins/articleLogger";
 
 
 export default {
   layout: 'articles',
-  mixins: [articles],
+  mixins: [articles, articleLogger],
   head() {
     return {
       title: "Data Privacy Articles"
@@ -59,13 +58,6 @@ export default {
     },
     logLeave(e){
       this.logEvent(LeaveEvent.fromEvent(e));
-    },
-    sendChangesToGoogle(){
-      if(this.eventLog.length > 0){
-        const data = JSON.stringify(this.eventLog.map(e => {return {timestamp: e.timestamp, type: e.type, description: e.description}}));
-        this.eventLog = [];
-        GoogleLogger('activity',{email: this.email, log:data});
-      }
     },
   }
 }

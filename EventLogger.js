@@ -38,10 +38,19 @@ class Event {
 }
 
 export class LoadEvent extends Event {
-  constructor(){
+  constructor(url){
     super(EVENT_TYPE.LOAD);
-    this.description = 'Loaded page';
+    this.url = url;
+    this.description = `Loaded page ${url}`;
   }
+
+  constructSerializedObject() {
+    const obj = super.constructSerializedObject();
+    obj.url = this.url;
+    return obj;
+  }
+
+
 }
 
 export class ElementInteraction extends Event {
