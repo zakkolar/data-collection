@@ -1,5 +1,4 @@
 import {defaultValues, userDataProperties} from "../store/userData";
-import {dataStorage} from "../backend/dataStorage"
 export default {
   methods: {
     clearAllData(){
