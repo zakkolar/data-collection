@@ -37,8 +37,15 @@
         </div>
 
         <p v-else>
-          There is currently no data stored in the browser.
+          There is currently no data for this site stored in your browser.
         </p>
+
+        <div v-if="externalArticleActivity || externalUserData">
+          <h2>Additional data</h2>
+          <p>
+            There may be additional data that cannot be displayed or deleted on this site due to your browser security settings. To check for additional data and/or remove it, click <a :href="`${otherSiteUrl}/privacy`">here</a>.
+          </p>
+        </div>
 
 
 
@@ -52,15 +59,15 @@
 import {userDataProperties, defaultValues} from "../../../store/userData";
 
 export default {
+  data() {
+    return {
+      otherSiteUrl: process.env.syncUrlBase
+    }
+  },
   computed: {
     collectedData() {
-      const data = {};
-      userDataProperties.forEach(prop => {
-        const propVal = this.$store.state['userData'][prop];
-        if(!!propVal && !!propVal.length){
-          data[prop] = this.$store.state['userData'][prop]
-        }
-      })
+      const data = this.allUserData;
+
 
       if(this.articleActivity.length > 0){
         data.articleActivity = this.articleActivity;
