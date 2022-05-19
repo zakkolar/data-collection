@@ -1,4 +1,5 @@
 import {dataStorage as ds} from "../backend/dataStorage";
+import {CookieSync} from "../backend/cookieSync";
 
 export const userDataProperties = [
   'color',
@@ -24,29 +25,12 @@ const transformations = {
 }
 
 const extraStorageMethods = {
-  color: color => {
-    const afterCookie = `;path=/;domain=${process.env.domainBase}`;
-    if(color){
-      document.cookie = `color=${color}${afterCookie}`
-    }
-    else {
-      document.cookie = `color=null${afterCookie};expires=Thu, 01 Jan 1970 00:00:01 GMT"`
-    }
-  }
+  color: color => color ? CookieSync.set('color', color) : CookieSync.delete('color')
 }
 
+
 const extraRetrievalMethods = {
-  color: () => {
-    var name = "color=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i].trim();
-      if ((c.indexOf(name)) == 0) {
-        return c.substring(name.length);
-      }
-    }
-    return null;
-  }
+  color: () => CookieSync.get('color')
 }
 
 export const defaultValues = {
