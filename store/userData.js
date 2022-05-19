@@ -58,11 +58,22 @@ function makeAction (key) {
   return ((context, value) => {
     const extraStorageMethod = extraStorageMethods[key] || (val => {})
     context.commit(key, value);
+
+    let userDataItems = parseInt(CookieSync.get('userDataItems') || 0);
+
     if(!value || value.length === 0){
       ds.unset(key);
+      userDataItems--;
     }
     else {
       ds.store(key, context.state[key]);
+      userDataItems++;
+    }
+    if(userDataItems > 0){
+      CookieSync.set('userDataItems', userDataItems);
+    }
+    else {
+      CookieSync.delete('userDataItems');
     }
     extraStorageMethod(value);
   })
