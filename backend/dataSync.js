@@ -80,6 +80,11 @@ export class DataSync {
     this.send('set', {key, value})
   }
 
+  unset(key){
+    localStorage.removeItem(key);
+    this.send('unset', {key})
+  }
+
   clear(){
     localStorage.clear()
     this.send('clear')

@@ -9,6 +9,9 @@ export const dataStorage = {
   retrieve(key){
     return JSON.parse(localStorage.getItem(key));
   },
+  unset(key){
+    sync.unset(key)
+  },
   clearAll() {
     sync.clear()
   }

@@ -32,9 +32,12 @@ export default {
       }
     },
 
-    receiveSet(params){
-      const {key, value} = params;
+    receiveSet({key, value}){
       localStorage.setItem(key, value);
+    },
+
+    receiveUnset({key}){
+      localStorage.removeItem(key);
     },
 
     receiveClear(){

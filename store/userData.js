@@ -74,11 +74,24 @@ function makeAction (key) {
   return ((context, value) => {
     const extraStorageMethod = extraStorageMethods[key] || (val => {})
     context.commit(key, value);
-    ds.store(key, context.state[key]);
+    if(!value || value.length === 0){
+      ds.unset(key);
+    }
+    else {
+      ds.store(key, context.state[key]);
+    }
     extraStorageMethod(value);
   })
 }
 
-export const actions = userDataProperties.reduce((prev, current) => ({...prev, [current]: makeAction(current)}), {} )
+const actions = userDataProperties.reduce((prev, current) => ({...prev, [current]: makeAction(current)}), {} )
+
+actions.clearAll = ({dispatch}) => {
+  userDataProperties.forEach(prop => {
+    dispatch(prop, defaultValues[prop] || null)
+  })
+}
+
+export {actions}
 
 
