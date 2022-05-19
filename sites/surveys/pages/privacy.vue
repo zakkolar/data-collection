@@ -91,7 +91,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 h2 {
   font-size: 1.2em;
   font-weight: bold;
