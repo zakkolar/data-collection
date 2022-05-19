@@ -1,8 +1,10 @@
 <template>
-  <sync></sync>
 </template>
 <script>
+import sync from "@/mixins/sync";
+
 export default {
-  layout: 'blank'
+  layout: 'blank',
+  mixins: [sync]
 }
 </script>
