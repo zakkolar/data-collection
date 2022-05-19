@@ -4,7 +4,7 @@
       <div class="form-fieldset">
         <h1 class="form-legend">Privacy</h1>
         <h2>Overview</h2>
-        <p>This purpose of this website is to simulate techniques used by many apps and websites to demonstrate how they prevent privacy. At the same time, the demonstration is designed to be incredibly respectful of user privacy.</p>
+        <p>This purpose of this website is to simulate techniques used by many apps and websites to demonstrate how they prevent privacy. At the same time, the demonstration is designed to be incredibly respectful of user privacy. No data is stored outside of your web browser, and very little data even leaves the browser.</p>
 
         <h2>IP Lookup</h2>
         <p>
@@ -13,7 +13,10 @@
 
         <h2>Cookies</h2>
         <p>
-          If you fill out the personality survey, the site places a cookie on your computer that identifies the color you chose (in addition to the local storage, described below). This cookie is sent back to the web server that hosts this site when you navigate between pages, but it is ignored and not stored anywhere.
+          If you fill out the personality survey, the site places a cookie on your computer that identifies the color you chose (in addition to the local storage, described below). Cookies are also set to track the number of pieces of data collected on the survey pages and whether any article reading data has been collected. In both cases, the actual data collected is not stored in the cookie.
+        </p>
+        <p>
+          Web browsers automatically send cookies back to the servers that host websites when you navigate between pages. However, all cookie values are ignored by this website's server and nothing is stored.
         </p>
 
         <h2>Local storage</h2>
