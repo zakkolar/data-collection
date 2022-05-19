@@ -12,7 +12,7 @@ export const mutations = {
     state.events.push(event);
   },
   clearLog(state){
-    state.events = []
+    state.events.splice(0, state.events.length);
   }
 }
 
