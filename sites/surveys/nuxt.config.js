@@ -17,7 +17,8 @@ const CustomConfig = {
   },
   buildDir: '.nuxt/surveys',
   env: {
-    syncUrlBase: process.env.SYNC_URL_BASE || 'http://localhost:3456'
+    syncUrlBase: process.env.SYNC_URL_BASE || 'http://localhost:3456',
+    site: 'surveys'
   }
 }
 

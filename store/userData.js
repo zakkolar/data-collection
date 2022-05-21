@@ -54,28 +54,16 @@ function makeMutation(key){
 
 export const mutations = userDataProperties.reduce((prev, current) => ({...prev, [current]: makeMutation(current)}), {} )
 
-export const USER_DATA_COOKIE_NAME = 'userDataItems';
-
 function makeAction (key) {
   return ((context, value) => {
     const extraStorageMethod = extraStorageMethods[key] || (val => {})
     context.commit(key, value);
 
-    let userDataItems = parseInt(CookieSync.get(USER_DATA_COOKIE_NAME) || 0);
-
     if(!value || value.length === 0){
       ds.unset(key);
-      userDataItems--;
     }
     else {
       ds.store(key, context.state[key]);
-      userDataItems++;
-    }
-    if(userDataItems > 0){
-      CookieSync.set(USER_DATA_COOKIE_NAME, userDataItems);
-    }
-    else {
-      CookieSync.delete(USER_DATA_COOKIE_NAME);
     }
     extraStorageMethod(value);
   })

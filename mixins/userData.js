@@ -1,7 +1,4 @@
 import {userDataProperties} from "../store/userData";
-import {CookieSync} from "../backend/cookieSync";
-import {ARTICLE_COOKIE_NAME} from "../store/articleActivity";
-
 function makeComputed(scope, key){
   return {
     get() {
@@ -14,9 +11,6 @@ function makeComputed(scope, key){
 }
 export default {
   computed: {
-    externalUserData() {
-      return (!this.articleActivity || this.articleActivity.length === 0) && CookieSync.get(ARTICLE_COOKIE_NAME) === 'true';
-    },
     allUserData() {
       const data = {};
       userDataProperties.forEach(prop => {

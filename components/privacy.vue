@@ -4,7 +4,13 @@
       <div class="form-fieldset">
         <h1 class="form-legend">Privacy</h1>
         <h2>Overview</h2>
-        <p>This purpose of this website is to simulate techniques used by many apps and websites to demonstrate how they prevent privacy. At the same time, the demonstration is designed to be incredibly respectful of user privacy. No data is stored outside of your web browser, and very little data even leaves the browser.</p>
+        <p>
+          This demonstration is divided into two websites with <nuxt-link to="/">{{currentSite}}</nuxt-link> (this site) and <a :href="otherSiteUrl">{{otherSite}}</a>. The privacy practices of both sites are described here.
+        </p>
+        <p>
+          This purpose of the demonstration is to simulate techniques used by many apps and websites to demonstrate how they prevent privacy. At the same time, it is designed to be incredibly respectful of user privacy. No data is stored outside of your web browser, and very little data even leaves the browser.
+        </p>
+
 
         <h2>IP Lookup</h2>
         <p>
@@ -13,10 +19,10 @@
 
         <h2>Cookies</h2>
         <p>
-          If you fill out the personality survey, the site places a cookie on your computer that identifies the color you chose (in addition to the local storage, described below). Cookies are also set to track the number of pieces of data collected on the survey pages and whether any article reading data has been collected. In both cases, the actual data collected is not stored in the cookie.
+          If you fill out the personality survey, the site places a cookie on your computer that identifies the color you chose (in addition to the local storage, described below).
         </p>
         <p>
-          Web browsers automatically send cookies back to the servers that host websites when you navigate between pages. However, all cookie values are ignored by this website's server and nothing is stored.
+          Web browsers automatically send cookies back to the servers that host websites when you navigate between pages. The cookie value is ignored by this website's server and nothing is stored.
         </p>
 
         <h2>Local storage</h2>
@@ -38,12 +44,12 @@
         <p v-else>
           There is currently no data for this site stored in your browser.
         </p>
-        <div v-if="externalArticleActivity || externalUserData">
-          <h2>Additional data</h2>
-          <p>
-            There may be additional data that cannot be displayed or deleted on this site due to your browser security settings. To check for additional data and/or remove it, click <a :href="`${otherSiteUrl}/privacy`">here</a>.
-          </p>
-        </div>
+
+        <h2>Additional data</h2>
+        <p>
+          The {{ currentSite }} and {{otherSite}} sites attempt to sync the collected data with each other and delete it in both places when you click the clear button on either site. However, certain browsers and/or security settings sometimes keep the data separate. To check for and/or delete additional data on the {{otherSite}} site, <a :href="`${otherSiteUrl}/privacy`">here</a>.
+        </p>
+
       </div>
     </div>
   </div>
@@ -54,7 +60,9 @@ export default {
   layout: 'default',
   data() {
     return {
-      otherSiteUrl: process.env.syncUrlBase
+      otherSiteUrl: process.env.syncUrlBase,
+      currentSite: process.env.site,
+      otherSite: process.env.site === 'articles' ? 'surveys' : 'articles'
     }
   },
   computed: {
@@ -77,7 +85,8 @@ export default {
     collectedDataExists() {
 
       return Object.keys(this.collectedData).length > 0;
-    }
+    },
+
   },
   head: {
     title: 'Privacy'

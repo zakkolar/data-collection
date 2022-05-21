@@ -20,7 +20,8 @@ const CustomConfig = {
   },
   buildDir: '.nuxt/articles',
   env: {
-    syncUrlBase: process.env.SYNC_URL_BASE || 'http://localhost:4567'
+    syncUrlBase: process.env.SYNC_URL_BASE || 'http://localhost:4567',
+    site: 'articles'
   }
 }
 
