@@ -1,9 +1,11 @@
+const afterCookie = `;path=/;domain=${process.env.domainBase}`;
+
 export const CookieSync = {
   set(key, value) {
-    document.cookie = `${key}=${afterCookie}`
+    document.cookie = `${key}=${value}${afterCookie}`
   },
   delete(key) {
-    document.cookie = `${key}=null;expires=Thu, 01 Jan 1970 00:00:01 GMT"`
+    document.cookie = `${key}=null${afterCookie};expires=Thu, 01 Jan 1970 00:00:01 GMT"`
   },
   get(key) {
     key += '='
