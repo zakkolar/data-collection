@@ -21,8 +21,15 @@
     <main class="py-4 articles ">
       <div class="container">
         <Nuxt />
+
       </div>
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center pb-3 mb-3">
+          <li class="nav-item"><nuxt-link to="/privacy" class="nav-link px-2 text-muted">Privacy</nuxt-link></li>
+        </ul>
+      </footer>
     </main>
+
   </div>
 
 
@@ -87,4 +94,9 @@ export default {
     background-color: #3c0779;
   }
 }
+
+.articles .container {
+  min-height: calc(100vh - 200px);
+}
+
 </style>
