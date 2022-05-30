@@ -18,20 +18,23 @@ export default {
 
     this.colorDepth = screen.colorDepth;
 
+    this.loadIp();
 
-    this.$axios.get('/.netlify/functions/ip').then(response => {
 
-      if(response.data){
-        this.ip = response.data.ip;
-        this.region = response.data.region;
-        this.country = response.data.country;
-        this.city = response.data.city;
-        this.latitude = response.data.latitude;
-        this.longitude = response.data.longitude;
-      }
-    })
   },
   methods: {
+    loadIp() {
+      this.$axios.get('/.netlify/functions/ip').then(response => {
+        if(response.data){
+          this.ip = response.data.ip;
+          this.region = response.data.region;
+          this.country = response.data.country;
+          this.city = response.data.city;
+          this.latitude = response.data.latitude;
+          this.longitude = response.data.longitude;
+        }
+      })
+    },
     getPlatform() {
       return navigator.platform || navigator.userAgentData?.platform;
     },
