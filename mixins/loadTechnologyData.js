@@ -10,13 +10,13 @@ export default {
 
     this.browserSize = `${window.innerWidth} x ${window.innerHeight}`
 
-    this.darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches +'';
+    this.darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches+'';
 
     this.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     this.operatingSystem = this.getOs();
 
-    this.colorDepth = screen.colorDepth+'';
+    this.colorDepth = screen.colorDepth;
 
 
     this.$axios.get('/.netlify/functions/ip').then(response => {

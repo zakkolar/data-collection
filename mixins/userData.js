@@ -15,8 +15,8 @@ export default {
       const data = {};
       userDataProperties.forEach(prop => {
         const propVal = this.$store.state['userData'][prop];
-        if(!!propVal && !!propVal.length){
-          data[prop] = this.$store.state['userData'][prop]
+        if((!!propVal) && (!Array.isArray(propVal) || !!propVal.length)){
+          data[prop] = propVal
         }
       })
       return data;
