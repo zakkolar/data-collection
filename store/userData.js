@@ -13,11 +13,17 @@ export const userDataProperties = [
   'country',
   'region',
   'city',
+  'latitude',
+  'longitude',
   'language',
   'userAgent',
   'platform',
   'screenSize',
   'browserSize',
+  'darkMode',
+  'timeZone',
+  'operatingSystem',
+  'colorDepth',
 ]
 
 const transformations = {
