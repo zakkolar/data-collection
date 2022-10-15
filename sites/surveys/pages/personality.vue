@@ -6,7 +6,7 @@
           Personality Quiz
         </legend>
         <div v-if="submitted">
-          <p>Thanks for submitting<span v-if="firstName && personalize">, {{firstName}}</span>!</p>
+          <p>Thanks for submitting<span v-if="name && personalize">, {{name}}</span>!</p>
         </div>
         <div v-else>
           <div class="form-element form-input">

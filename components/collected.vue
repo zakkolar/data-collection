@@ -15,13 +15,9 @@
           <td>Book, movie, or TV show:</td>
           <td>{{entertainment}}</td>
         </tr>
-        <tr v-if="firstName">
-          <td>First name:</td>
-          <td>{{firstName}}</td>
-        </tr>
-        <tr v-if="lastName">
-          <td>Last Name:</td>
-          <td>{{lastName}}</td>
+        <tr v-if="name">
+          <td>Name:</td>
+          <td>{{name}}</td>
         </tr>
         <tr v-if="devices.length">
           <td>Devices:</td>
