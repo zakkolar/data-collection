@@ -23,6 +23,8 @@ export const userDataProperties = [
   'timeZone',
   'operatingSystem',
   'colorDepth',
+  'inferenceValue',
+  'inferenceLabel'
 ]
 
 const transformations = {

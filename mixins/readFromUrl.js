@@ -14,7 +14,7 @@ export default {
 
       const encodedData = hashParts.get('userData');
 
-      const fieldsToRead=['displayName', 'color', 'entertainment', 'book']
+      const fieldsToRead=['displayName', 'color', 'entertainment', 'book', 'inferenceLabel']
 
       try {
         const data = JSON.parse(atob(encodedData));
@@ -24,6 +24,26 @@ export default {
             this[field] = data[field]
           }
         })
+        if(data.inferenceList) {
+
+          const inferences = data.inferenceList
+            .map(row => {return {date: new Date(row[0]), value: row[1]}})
+            .sort((a, b) => Number(b.date) - Number(a.date) );
+
+          let inferenceValue = "";
+          const now = Number(new Date());
+
+          for(let inference of inferences) {
+            if(Number(inference.date) < now) {
+              inferenceValue = inference.value;
+              break;
+            }
+          }
+
+          this.inferenceValue = inferenceValue;
+
+        }
+
       }
       catch(e){ }
     }
