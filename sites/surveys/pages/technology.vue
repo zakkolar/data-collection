@@ -6,7 +6,7 @@
           Technology Survey
         </legend>
         <div v-if="submitted">
-          <p>Thanks for submitting<span v-if="name && personalize">, {{name}}</span>!</p>
+          <p>Thanks for submitting<span v-if="displayName && personalize">, {{displayName}}</span>!</p>
         </div>
         <div v-else>
           <div class="form-checkbox">

@@ -14,7 +14,7 @@ export default {
 
       const encodedData = hashParts.get('userData');
 
-      const fieldsToRead=['name', 'color', 'entertainment', 'book']
+      const fieldsToRead=['displayName', 'color', 'entertainment', 'book']
 
       try {
         const data = JSON.parse(atob(encodedData));

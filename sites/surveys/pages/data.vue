@@ -5,9 +5,9 @@
         <h1 class="form-legend">All data collected from your device</h1>
         <div style="margin-top: 30px;">
           <table>
-            <tr v-if="name">
+            <tr v-if="displayName">
               <td>Name:</td>
-              <td>{{name}}</td>
+              <td>{{displayName}}</td>
             </tr>
             <tr v-if="number">
               <td>Number:</td>

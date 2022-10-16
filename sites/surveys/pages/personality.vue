@@ -6,10 +6,11 @@
           Personality Quiz
         </legend>
         <div v-if="submitted">
-          <p style="font-size: 1.5em" v-if="name && personalize">Thanks for submitting, {{name}}!</p>
+          <p style="font-size: 1.5em" v-if="displayName && personalize">Thanks for submitting, {{displayName}}!</p>
           <table>
-            <tr v-if="name">
-              <td></td>
+            <tr v-if="displayName">
+              <td>Name</td>
+              <td>{{displayName}}</td>
             </tr>
             <tr v-if="number">
               <td>

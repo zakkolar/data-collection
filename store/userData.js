@@ -5,7 +5,7 @@ export const userDataProperties = [
   'color',
   'entertainment',
   'number',
-  'name',
+  'displayName',
   'devices',
   'socialMedia',
   'ip',
