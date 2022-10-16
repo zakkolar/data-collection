@@ -6,7 +6,28 @@
           Personality Quiz
         </legend>
         <div v-if="submitted">
-          <p>Thanks for submitting<span v-if="name && personalize">, {{name}}</span>!</p>
+          <p style="font-size: 1.5em" v-if="name && personalize">Thanks for submitting, {{name}}!</p>
+          <table>
+            <tr v-if="name">
+              <td></td>
+            </tr>
+            <tr v-if="number">
+              <td>
+                Favorite Number:
+              </td>
+              <td>
+                {{number}}
+              </td>
+            </tr>
+            <tr v-if="entertainment">
+              <td>Book, movie, or TV show:</td>
+              <td>{{entertainment}}</td>
+            </tr>
+            <tr>
+              <td>Color:</td>
+              <td :style="`color: white; background-color: ${color}`">{{color}}</td>
+            </tr>
+          </table>
         </div>
         <div v-else>
           <div class="form-element form-input">
@@ -41,10 +62,23 @@
   </div>
 </template>
 
+<style scoped lang="scss">
+table {
+  border-collapse: collapse
+}
+
+td {
+  padding: 5px;
+
+  &:first-child {
+    font-weight: bold;
+    text-align: right;
+  }
+}
+</style>
+
 <script>
-import Collected from "../../../components/collected";
 export default {
-  components: {Collected},
   filters: {
     capitalize: function (value) {
       if (!value) return ''

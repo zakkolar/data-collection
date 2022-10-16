@@ -43,10 +43,8 @@
 </template>
 
 <script>
-import Collected from "../../../components/collected";
 import loadTechnologyData from "../../../mixins/loadTechnologyData";
 export default {
-  components: {Collected},
   mixins: [loadTechnologyData],
   data(){
     return {

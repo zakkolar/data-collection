@@ -17,9 +17,7 @@
   </div>
 </template>
 <script>
-import Collected from "../../../components/collected";
 export default {
-  components: {Collected},
   head: {
     title: 'Data Collection Demo'
   }
