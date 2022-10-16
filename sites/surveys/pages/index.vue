@@ -12,8 +12,6 @@
        </p>
       </div>
     </div>
-
-    <collected></collected>
   </div>
 </template>
 <script>

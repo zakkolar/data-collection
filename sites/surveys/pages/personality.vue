@@ -58,7 +58,6 @@
         <button class="form-btn" type="submit">Submit</button>
       </div>
     </form>
-    <collected></collected>
   </div>
 </template>
 
