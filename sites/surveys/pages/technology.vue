@@ -120,8 +120,7 @@ export default {
     return {
       deviceChoices: ['Chromebook','PC','iPhone','Android phone','iPad','Android tablet','Other'],
       socialMediaChoices: ["I don't use social media",'YouTube', 'SnapChat', 'TikTok', 'Instagram', 'Twitter', 'Facebook', 'Other'],
-      submitted: false,
-      personalize: true
+      submitted: false
     }
   },
   head: {
