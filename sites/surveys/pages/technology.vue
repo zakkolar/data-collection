@@ -6,7 +6,78 @@
           Technology Survey
         </legend>
         <div v-if="submitted">
-          <p>Thanks for submitting<span v-if="displayName && personalize">, {{displayName}}</span>!</p>
+          <table class="data">
+            <tr v-if="devices.length">
+              <td>Devices:</td>
+              <td>
+                <ul>
+                  <li v-for="device in devices">
+                    {{device}}
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr v-if="socialMedia.length">
+              <td>Social media:</td>
+              <td>
+                <ul>
+                  <li v-for="site in socialMedia">
+                    {{site}}
+                  </li>
+                </ul>
+              </td>
+
+            </tr>
+            <tr v-if="ip">
+              <td>IP Address:</td>
+              <td>{{ip}}</td>
+            </tr>
+            <tr v-if="country">
+              <td>Country:</td>
+              <td>{{country}}</td>
+            </tr>
+            <tr v-if="region">
+              <td>State/region:</td>
+              <td>{{region}}</td>
+            </tr>
+            <tr v-if="language">
+              <td>Language:</td>
+              <td>{{language}}</td>
+            </tr>
+            <tr v-if="userAgent">
+              <td>User agent:</td>
+              <td>{{userAgent}}</td>
+            </tr>
+            <tr v-if="platform">
+              <td>Platform:</td>
+              <td>{{platform}}</td>
+            </tr>
+            <tr v-if="screenSize">
+              <td>Screen size:</td>
+              <td>{{screenSize}}</td>
+            </tr>
+            <tr v-if="browserSize">
+              <td>Browser size</td>
+              <td>{{browserSize}}</td>
+            </tr>
+            <tr v-if="darkMode">
+              <td>Dark mode</td>
+              <td>{{darkMode}}</td>
+            </tr>
+            <tr v-if="timeZone">
+              <td>Time Zone</td>
+              <td>{{timeZone}}</td>
+            </tr>
+            <tr v-if="operatingSystem">
+              <td>Operating System</td>
+              <td>{{operatingSystem}}</td>
+            </tr>
+            <tr v-if="colorDepth">
+              <td>Color Depth</td>
+              <td>{{colorDepth}}</td>
+            </tr>
+          </table>
+
         </div>
         <div v-else>
           <div class="form-checkbox">
