@@ -75,23 +75,23 @@
               <td>{{screenSize}}</td>
             </tr>
             <tr v-if="browserSize">
-              <td>Browser size</td>
+              <td>Browser size:</td>
               <td>{{browserSize}}</td>
             </tr>
             <tr v-if="darkMode">
-              <td>Dark mode</td>
+              <td>Dark mode:</td>
               <td>{{darkMode}}</td>
             </tr>
             <tr v-if="timeZone">
-              <td>Time Zone</td>
+              <td>Time Zone:</td>
               <td>{{timeZone}}</td>
             </tr>
             <tr v-if="operatingSystem">
-              <td>Operating System</td>
+              <td>Operating System:</td>
               <td>{{operatingSystem}}</td>
             </tr>
             <tr v-if="colorDepth">
-              <td>Color Depth</td>
+              <td>Color Depth:</td>
               <td>{{colorDepth}}</td>
             </tr>
           </table>
