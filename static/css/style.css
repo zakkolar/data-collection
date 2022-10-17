@@ -613,3 +613,18 @@ body {
   background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
   min-height: 100vh;
 }
+
+table.data {
+  border-collapse: collapse
+}
+
+.data td {
+  padding: 5px;
+
+
+}
+
+.data td:first-child {
+   font-weight: bold;
+   text-align: right;
+ }

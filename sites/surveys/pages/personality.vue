@@ -7,7 +7,7 @@
         </legend>
         <div v-if="submitted">
           <p style="font-size: 1.5em" v-if="displayName && personalize">Thanks for submitting, {{displayName}}!</p>
-          <table>
+          <table class="data">
             <tr v-if="displayName">
               <td>Name</td>
               <td>{{displayName}}</td>
@@ -61,21 +61,6 @@
     </form>
   </div>
 </template>
-
-<style scoped lang="scss">
-table {
-  border-collapse: collapse
-}
-
-td {
-  padding: 5px;
-
-  &:first-child {
-    font-weight: bold;
-    text-align: right;
-  }
-}
-</style>
 
 <script>
 export default {

@@ -4,7 +4,7 @@
       <div class="form-fieldset">
         <h1 class="form-legend">All data collected from your device</h1>
         <div style="margin-top: 30px;">
-          <table>
+          <table class="data">
             <tr v-if="displayName">
               <td>Name:</td>
               <td>{{displayName}}</td>
@@ -119,20 +119,6 @@ h1 {
 h1 {
   font-size: 30px;
   text-align: center;
-}
-
-table {
-  border-collapse: collapse
-}
-
-td {
-  padding: 5px;
-
-&:first-child {
-   font-weight: bold;
-   text-align: right;
-  width: 150px;
- }
 }
 
 ul, li{
