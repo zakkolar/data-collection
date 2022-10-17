@@ -24,7 +24,8 @@ export const userDataProperties = [
   'operatingSystem',
   'colorDepth',
   'inferenceValue',
-  'inferenceLabel'
+  'inferenceLabel',
+  'subject'
 ]
 
 const transformations = {

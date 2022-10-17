@@ -6,10 +6,11 @@
         <p>Welcome! This website has been created for instructional purposes to demonstrate some ways data is collected as consumers use apps and websites.</p>
         <p>To start generating and collecting data, use one of the links below:</p>
 
-       <p>
+       <div>
          <NuxtLink to="/personality" class="form-btn">Personality Quiz</NuxtLink>
          <NuxtLink to="/technology" class="form-btn">Technology Survey</NuxtLink>
-       </p>
+         <br><div style="margin-top:10px"></div><NuxtLink to="/school" class="form-btn">School Survey</NuxtLink>
+       </div>
       </div>
     </div>
   </div>

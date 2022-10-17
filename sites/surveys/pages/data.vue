@@ -94,6 +94,14 @@
               <td>Color Depth:</td>
               <td>{{colorDepth}}</td>
             </tr>
+            <tr v-if="subject">
+              <td>Favorite subject:</td>
+              <td>{{subject}}</td>
+            </tr>
+            <tr v-if="inferenceValue && inferenceLabel">
+              <td>{{inferenceLabel}}:</td>
+              <td>{{inferenceValue}}</td>
+            </tr>
           </table>
           <button class="clearData" @click="clearAllData">Clear all collected data</button>
         </div>
