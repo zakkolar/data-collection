@@ -627,5 +627,5 @@ table.data {
 .data td:first-child {
    font-weight: bold;
    text-align: right;
-    width: 150px;
+    width: 180px;
  }
