@@ -103,7 +103,6 @@
               <td>{{inferenceValue}}</td>
             </tr>
           </table>
-          <button class="clearData" @click="clearAllData">Clear all collected data</button>
         </div>
       </div>
     </div>
@@ -134,8 +133,4 @@ ul, li{
   padding-bottom: 0;
 }
 
-.clearData {
-  margin: 10px auto 5px;
-  display: block;
-}
 </style>

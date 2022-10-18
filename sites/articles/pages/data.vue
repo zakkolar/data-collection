@@ -5,7 +5,6 @@
         No activity!
       </p>
       <div v-else>
-        <button class="btn btn-primary" @click="clearAllData">Clear all data</button>
         <table>
           <thead>
           <tr>
@@ -28,10 +27,9 @@ td, th {
 </style>
 <script>
 import articles from "@/mixins/articles";
-import clearAllData from "../../../mixins/clearAllData";
 export default {
   layout: 'articles',
-  mixins: [articles, clearAllData],
+  mixins: [articles],
   head() {
     return {
       title: "Data Privacy Articles"

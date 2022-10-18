@@ -27,7 +27,7 @@
 
         <h2>Local storage</h2>
         <p>
-          All other data, including the retrieved location, are only stored in the user's browser using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank">local storage API</a>. No data are transmitted anywhere else, nor can any be accessed by other websites. You may view all data stored at the bottom of this page. You can delete it by clearing local storage for this website in your browser or using the button at the bottom of this page.
+          All other data, including the retrieved location, are only stored in the user's browser using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank">local storage API</a>. No data are transmitted anywhere else, nor can any be accessed by other websites. You may view all data stored at the bottom of this page. You can delete it by clearing local storage for this website in your browser.
         </p>
 
 
@@ -35,11 +35,6 @@
 
         <div v-if="collectedDataExists">
           <pre>{{ collectedDataString }}</pre>
-          <p>
-            <button style="margin-top:0" @click="clearAllData" class="form-btn btn btn-danger">Clear All Data</button>
-          </p>
-
-          <p>The site will continue storing local data if you revisit any of the pages after clearing. However, you can always return to this page and clear it again if you so choose.</p>
         </div>
         <p v-else>
           There is currently no data for this site stored in your browser.
@@ -47,7 +42,7 @@
 
         <h2>Additional data</h2>
         <p>
-          The {{ currentSite }} and {{otherSite}} sites attempt to sync the collected data with each other and delete it in both places when you click the clear button on either site. However, certain browsers and/or security settings sometimes keep the data separate. To check for and/or delete additional data on the {{otherSite}} site, <a :href="`${otherSiteUrl}/privacy`">here</a>.
+          The {{ currentSite }} and {{otherSite}} sites attempt to sync the collected data with each other. However, certain browsers and/or security settings sometimes keep the data separate. To check for additional data on the {{otherSite}} site, <a :href="`${otherSiteUrl}/privacy`">here</a>.
         </p>
 
       </div>
