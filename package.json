@@ -27,5 +27,8 @@
   "devDependencies": {
     "sass": "^1.49.9",
     "sass-loader": "^10.2.1"
+  },
+  "overrides": {
+    "postcss": ">=8"
   }
 }
