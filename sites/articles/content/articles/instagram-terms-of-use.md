@@ -1,5 +1,5 @@
 ---
-title: Instagram's NEW 2021 Terms of Use
+title: Instagram's Terms of Use
 source: Adapted from "Instagram's NEW 2021 Terms Of Use- What's New and What's Not" on Tech Wellness
 ---
 
