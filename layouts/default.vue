@@ -1,5 +1,6 @@
 <template>
   <div class="layout-default">
+    <moved-notification></moved-notification>
     <Nuxt />
     <div class="privacy">
       <RouterLink to="/privacy">Privacy</RouterLink>
@@ -7,6 +8,7 @@
   </div>
 </template>
 <script>
+import MovedNotification from "@/components/MovedNotification.vue";
 export default {
   head: {
     link: [
@@ -19,6 +21,9 @@ export default {
         href: '/css/bootstrap-reboot.min.css'
       }
     ]
+  },
+  components: {
+    MovedNotification
   }
 }
 </script>

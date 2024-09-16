@@ -1,5 +1,6 @@
 <template>
   <div :class="color">
+    <moved-notification></moved-notification>
     <nav class="navbar navbar-expand-md navbar-dark">
       <div class="container-fluid">
         <span @mouseenter="logHover" @click="logClick" @mouseleave="logLeave"><nuxt-link to="/" class="navbar-brand" >Data Privacy Articles</nuxt-link></span>
@@ -37,6 +38,7 @@
 <script>
 import articles from "@/mixins/articles";
 import articleLogger from "../mixins/articleLogger";
+import MovedNotification from "@/components/MovedNotification.vue";
 
 export default {
   head: {
@@ -56,7 +58,10 @@ export default {
   mixins: [
     articles,
     articleLogger
-  ]
+  ],
+  components: {
+    MovedNotification
+  }
 }
 </script>
 <style lang="scss">
